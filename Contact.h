@@ -13,9 +13,9 @@ private:
 public:
     Contact(const char* name, const char* home, const char* work, const char* mobile, const char* info);
     ~Contact();
-    void displayContact() const;
-    const char* getFullName() const;
-    void saveToFile(FILE* file) const;
+    void displayContact() ;
+    const char* getFullName() ;
+    void saveToFile(FILE* file) ;
     bool loadFromFile(FILE* file);
 };
 
