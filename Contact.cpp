@@ -22,7 +22,7 @@ Contact::~Contact() {
     delete[] additionalInfo;
 }
 
-void Contact::displayContact() const {
+void Contact::displayContact()  {
     cout << "ФИО: " << fullName << "\n";
     cout << "Домашний телефон: " << homePhone << "\n";
     cout << "Рабочий телефон: " << workPhone << "\n";
@@ -30,11 +30,11 @@ void Contact::displayContact() const {
     cout << "Дополнительная информация: " << additionalInfo << "\n";
 }
 
-const char* Contact::getFullName() const {
+const char* Contact::getFullName()  {
     return fullName;
 }
 
-void Contact::saveToFile(FILE* file) const {
+void Contact::saveToFile(FILE* file)  {
     fwrite(fullName, sizeof(char), strlen(fullName) + 1, file);
     fwrite(homePhone, sizeof(char), strlen(homePhone) + 1, file);
     fwrite(workPhone, sizeof(char), strlen(workPhone) + 1, file);
