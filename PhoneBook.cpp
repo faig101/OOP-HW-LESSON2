@@ -27,7 +27,7 @@ void PhoneBook::deleteContact(const char *fullName) {
     }
 }
 
-int PhoneBook::findContactIndex(const char *fullName) const {
+int PhoneBook::findContactIndex(const char *fullName)  {
     for (int i = 0; i < count; i++) {
         if (strcmp(contacts[i]->getFullName(), fullName) == 0) {
             return i;
@@ -36,7 +36,7 @@ int PhoneBook::findContactIndex(const char *fullName) const {
     return -1;
 }
 
-void PhoneBook::displayAllContacts() const {
+void PhoneBook::displayAllContacts()  {
     for (int i = 0; i < count; i++) {
         cout << "Контакт " << i + 1 << ":\n";
         contacts[i]->displayContact();
@@ -44,7 +44,7 @@ void PhoneBook::displayAllContacts() const {
     }
 }
 
-void PhoneBook::saveToFile(const char *fileName) const {
+void PhoneBook::saveToFile(const char *fileName)  {
     FILE *file = fopen(fileName, "wb");
     if (file != nullptr) {
         fwrite(&count, sizeof(int), 1, file);
